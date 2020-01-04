@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    li{
+        list-style: none;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+</head>
+<body>
+    <ul id="ul1"></ul>
+    <script>
+    //在页面的body里创建20个li元素，让他们呈现一个楼梯效果
+    var oUl = document.getElementById("ul1");
+    var aLi = oUl.getElementsByTagName("li");
+    var str = "";
+    for(var i=0;i<20;i++){
+        str += "<li></li>";
+    }
+    oUl.innerHTML = str;
+    for(var i=0;i<20;i++){
+        aLi[i].style.left = i*50 + "px";
+        aLi[i].style.top = i*50 + "px";
+    }
+    </script>
+</body>
+</html>

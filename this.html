@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+    //console.log(this); //window
+    // function fn1(){
+    //     console.log(this);
+    // }
+    //fn1();  //一个直接调用函数内部的this也是window
+    var oDiv = document.getElementById("div1");
+    // oDiv.onclick = fn1;  //事件对象
+    var obj = {};
+    obj.fn1 = function (){
+        console.log(this);
+    }
+    obj.fn1();  //一个被调用的方法，中的this指向该方法拥有者对象
+    </script>
+</body>
+</html>

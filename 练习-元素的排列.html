@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    li{
+        list-style: none;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position:absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+</head>
+<body>
+    <ul id="ul1"></ul>
+    <script>
+    // 创建50个li元素在ul里，并把li元素按照5排10列的方式排列，且每两个元素之间间隔1个像素
+    var oUl = document.getElementById("ul1");
+    var str = ""
+    for(var i=0;i<50;i++){
+        str += "<li></li>";
+    }
+    oUl.innerHTML = str;
+    var aLi = oUl.getElementsByTagName("li");
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].style.top = Math.floor(i/10)*51+"px";
+        aLi[i].style.left = i%10 * 51 +"px";
+    }
+    </script>
+</body>
+</html>
